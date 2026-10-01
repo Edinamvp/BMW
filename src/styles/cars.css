@@ -1,0 +1,199 @@
+/* Container Layout */
+.page-wrapper {
+  background-color: #0b0c10;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cars-page {
+  flex: 1;
+  padding: 120px 0 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.cars-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.cars-header .subheading {
+  color: #0066B1;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 8px;
+}
+ 
+.cars-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.cars-header p {
+  color: #a0a0a0;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Search Box */
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 450px;
+  padding: 14px 24px;
+  font-size: 15px;
+  border-radius: 30px;
+  border: 1px solid #2a2d34;
+  background-color: #14161d;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-container input::placeholder {
+  color: #666;
+}
+
+.search-container input:focus {
+  border-color: #0066B1;
+  box-shadow: 0 0 12px rgba(0, 102, 177, 0.3);
+}
+
+/* Grid Layout */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+/* No Results Handling */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+  font-size: 16px;
+  background-color: #14161d;
+  border-radius: 12px;
+  border: 1px dashed #2a2d34;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cars-page {
+    padding: 100px 16px 60px;
+  }
+
+  .cars-header h1 {
+    font-size: 32px;
+  }
+
+  .cars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Car Card Component Styles */
+.car-card {
+  background-color: #14161d;
+  border: 1px solid #2a2d34;
+  border-radius: 12px;
+  overflow: hidden; /* Keeps the rounded corners on the image */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for a luxury feel */
+.car-card:hover {
+  transform: translateY(-6px);
+  border-color: #0066B1;
+  box-shadow: 0 10px 25px rgba(0, 102, 177, 0.2);
+}
+
+/* Fix image scaling */
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Prevents image stretching */
+  display: block;
+}
+
+/* Padding inside the card content */
+.car-card-content, 
+.car-details, 
+.car-info { 
+  padding: 20px; /* Adds breathing room around text and buttons */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.car-card h3,
+.car-card h2 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+.car-card p {
+  font-size: 14px;
+  color: #a0a0a0;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+}
+
+/* Force strict layout boundaries */
+.cars-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 32px !important; /* Space BETWEEN cards */
+  padding: 20px 0 !important;
+}
+
+.car-card {
+  background-color: #14161d !important;
+  border: 1px solid #2a2d34 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin: 0 !important; /* Prevents collapsing margins */
+}
+
+.car-card-content {
+  padding: 24px !important; /* Space INSIDE the card */
+  box-sizing: border-box !important;
+}
+
+.car-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #0b0c10;
+}
+
+.car-image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}

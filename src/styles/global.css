@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0A0A0A;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom BMW scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0066B1;
+  border-radius: 5px;
+}
+
+/* FORCE GALLERY FIX */
+.gallery-page {
+  padding: 100px 5% 80px !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+.gallery-grid img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 240px !important;
+  object-fit: cover !important;
+  border-radius: 16px !important;
+  display: block !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-6px) !important;
+}
+
+/* Persistent Navbar Rule */
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #1a1a1a;
+  width: 100%;
+}
+
+/* Base top spacing for all page containers so navbar never overlaps content */
+.cars-page,
+.gallery-page,
+.about-page,
+.contact,
+.favorites-page {
+  padding-top: 100px !important;
+}

@@ -1,0 +1,156 @@
+.car-details{
+    padding:120px 8%;
+    min-height:100vh;
+    background:#0A0A0A;
+    color:white;
+}
+
+.details-container{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.details-image{
+    position:relative;
+}
+
+.details-image img{
+    width:100%;
+    border-radius:25px;
+    transition:.4s;
+    box-shadow:0 20px 50px rgba(0,0,0,.55);
+}
+
+.details-image img:hover{
+    transform:scale(1.02);
+}
+
+.details-info h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.car-badge{
+    display:inline-block;
+    background:#0066B1;
+    color:white;
+    padding:8px 18px;
+    border-radius:25px;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.rating{
+    color:#FFD700;
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+.price{
+    font-size:38px;
+    color:#0066B1;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.description{
+    color:#CCCCCC;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.spec-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.spec-card{
+    background:#161616;
+    padding:20px;
+    border-radius:18px;
+    transition:.35s;
+    border:1px solid transparent;
+}
+
+.spec-card:hover{
+    transform:translateY(-8px);
+    border:1px solid #0066B1;
+    box-shadow:0 0 18px rgba(0,102,177,.35);
+}
+
+.spec-card h3{
+    color:#0066B1;
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.spec-card p{
+    font-size:18px;
+    font-weight:600;
+}
+
+.button-group{
+    display:flex;
+    gap:18px;
+    margin-top:45px;
+    flex-wrap:wrap;
+}
+
+.button-group button{
+    border:none;
+    cursor:pointer;
+    border-radius:30px;
+    padding:15px 28px;
+    font-size:16px;
+    transition:.35s;
+    font-weight:600;
+}
+
+.button-group button:nth-child(1){
+    background:#2A2A2A;
+    color:white;
+}
+
+.button-group button:nth-child(2){
+    background:#C1121F;
+    color:white;
+}
+
+.button-group button:nth-child(3){
+    background:#0066B1;
+    color:white;
+}
+
+.button-group button:hover{
+    transform:translateY(-4px);
+    opacity:.92;
+}
+
+@media(max-width:950px){
+
+.details-container{
+    grid-template-columns:1fr;
+}
+
+.details-info h1{
+    font-size:38px;
+}
+
+.spec-grid{
+    grid-template-columns:1fr;
+}
+
+.button-group{
+    flex-direction:column;
+}
+
+.button-group button{
+    width:100%;
+}
+
+}

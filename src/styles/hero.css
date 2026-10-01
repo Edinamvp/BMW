@@ -1,0 +1,136 @@
+.hero {
+  position: relative;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Moving Background Image */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%; /* Slightly larger so image doesn't show white edges while moving */
+  height: 110%;
+  background-image: url("https://images.unsplash.com/photo-1555215695-3004980ad54e");
+  background-size: cover;
+  background-position: center;
+  /* Smooth continuous panning animation */
+  animation: floatBackground 18s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+/* Dark Overlay for contrast */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(10, 10, 10, 0.9) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeInUp 1.2s ease;
+}
+
+.hero-content h1 {
+  font-size: 68px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: #dddddd;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: #0066B1;
+  color: white;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: white;
+  color: #0066B1;
+  transform: translateY(-3px);
+}
+
+.secondary-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* Camera Motion Animation (Pan & Zoom) */
+@keyframes floatBackground {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-15px, -10px);
+  }
+  100% {
+    transform: scale(1.12) translate(15px, 10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 42px;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+}

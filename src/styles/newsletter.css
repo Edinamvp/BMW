@@ -1,0 +1,37 @@
+.newsletter{
+
+padding:80px 5%;
+
+text-align:center;
+
+background:#111;
+
+}
+
+
+.newsletter input{
+
+padding:15px;
+
+width:300px;
+
+border-radius:25px;
+
+border:none;
+
+margin:20px;
+
+}
+
+
+.newsletter button{
+
+padding:15px 30px;
+
+border-radius:25px;
+
+background:#0066B1;
+
+color:white;
+
+}
